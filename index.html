@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Office Assistant</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <meta name="theme-color" content="#1e40af" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* For Modal component */
+      @keyframes modalShow {
+        0% { transform: scale(0.95); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+      }
+      .animate-modalShow {
+        animation: modalShow 0.3s ease-out forwards;
+      }
+
+      /* For Chatbot component */
+      @keyframes chatOpen {
+        0% { transform: scale(0.95) translateY(10px); opacity: 0; }
+        100% { transform: scale(1) translateY(0); opacity: 1; }
+      }
+      .animate-chatOpen {
+        animation: chatOpen 0.3s ease-out forwards;
+      }
+      
+      /* For QR Code Scanner in QrCodeCheckinModal.tsx */
+      @keyframes scan-line {
+        0% { transform: translateY(-100%); opacity: 0.7; }
+        50% { transform: translateY(100%); opacity: 0.7; }
+        51% { opacity: 0; } /* Make it disappear briefly to restart cleanly */
+        100% { transform: translateY(-100%); opacity: 0; }
+      }
+      .animate-scan-line {
+        /* animation duration is set inline in QrCodeCheckinModal, but defined here for clarity if needed globally */
+         animation: scan-line 1.5s infinite ease-in-out;
+      }
+
+      /* Custom scrollbar for better aesthetics (optional) */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1; /* gray-300 */
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8; /* gray-500 */
+      }
+      body {
+        font-family: 'Inter', sans-serif; /* Using a common sans-serif font, Tailwind's default is usually good */
+      }
+      @import url('https://rsms.me/inter/inter.css');
+      html { font-family: 'Inter', sans-serif; }
+      @supports (font-variation-settings: normal) {
+        html { font-family: 'Inter var', sans-serif; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2",
+    "recharts": "https://esm.sh/recharts@^2.15.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-100">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

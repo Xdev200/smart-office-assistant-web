@@ -1,0 +1,5 @@
+{
+  "name": "Smart Office Assistant",
+  "description": "A React web application to manage office attendance, parking, room bookings, and interact with an AI chatbot. Designed for both employees and administrators.",
+  "requestFramePermissions": ["camera"]
+}

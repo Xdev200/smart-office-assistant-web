@@ -1,0 +1,23 @@
+
+{
+  "short_name": "SmartOffice",
+  "name": "Smart Office Assistant",
+  "description": "AI-powered office management and assistance platform",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#1e40af",
+  "background_color": "#f8fafc",
+  "orientation": "portrait-primary"
+}

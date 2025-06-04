@@ -1,4 +1,3 @@
-
 # Product Roadmap: Smart Office Assistant
 
 This document outlines the planned features and improvements for the Smart Office Assistant application.

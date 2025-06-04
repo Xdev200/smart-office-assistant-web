@@ -1,4 +1,3 @@
-
 # Smart Office Assistant
 
 Welcome to the Smart Office Assistant! This is a React-based web application designed to streamline workplace operations in an IT office environment. It helps manage employee attendance, parking spaces, and conference room bookings, along with an admin dashboard for insights and a helpful AI chatbot.
@@ -106,3 +105,19 @@ This application is designed to run directly in a browser that supports modern J
     -   Chatbot responses are based on a predefined knowledge base and simple contextual rules.
     -   Predictions (peak days, room recommendations) are hardcoded or based on simple calculations on mock data.
     -   Conflict resolution and auto-release of slots are simulated with basic logic.
+
+## 🖥️ Progressive Web App (PWA) Support
+
+This project is now a PWA! You can install it on your desktop or mobile device for a native app-like experience. Key features:
+- **Offline support**: Basic offline caching using a service worker.
+- **Installable**: Add to your home screen or desktop from supported browsers.
+- **Manifest**: Includes app name, icons, theme color, and more for a polished install experience.
+
+**How it works:**
+- A service worker (`public/service-worker.js`) caches core assets for offline use.
+- The app registers the service worker automatically on load.
+- The manifest (`manifest.json`) provides metadata for installability.
+
+To test PWA features:
+1. Build and serve the app (`npm run build` then `serve dist/`).
+2. Open in Chrome/Edge, go to DevTools → Application tab, and check service worker and installability status.

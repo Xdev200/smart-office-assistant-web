@@ -81,10 +81,21 @@ npm run preview
 ### Option 1: Static Hosting
 The application builds to static files in the `dist/` folder and can be deployed to any static hosting service:
 
-- **Vercel**: `vercel --prod`
+- **Vercel**:
+  ```bash
+  # Auto-deploy via Git integration (recommended)
+  # Or manual deploy: vercel --prod
+  ```
 - **Netlify**: Drag and drop `dist/` folder or connect Git repository
 - **GitHub Pages**: Deploy `dist/` folder to gh-pages branch
 - **AWS S3**: Upload `dist/` contents to S3 bucket with static hosting
+
+### Vercel Deployment Configuration
+For Vercel deployment, the build settings should be:
+- **Build Command**: `npm run build`
+- **Output Directory**: `dist`
+- **Install Command**: `npm install`
+- **Node.js Version**: 18.x or higher
 
 ### Option 2: Local Server
 ```bash
@@ -150,7 +161,30 @@ The application includes mock users for testing:
 - **No Persistence**: Data doesn't persist between sessions (localStorage used selectively)
 - **AI Responses**: Chatbot uses rule-based responses, not actual AI API
 
-## 🔮 What's Next
+## � Troubleshooting
+
+### Deployment Issues
+
+**Vercel Platform Error (EBADPLATFORM)**
+If you encounter platform-specific dependency errors:
+```bash
+# Clear node_modules and package-lock.json
+rm -rf node_modules package-lock.json
+npm install
+```
+
+**Build Failures**
+- Ensure Node.js version is 18+ in deployment settings
+- Check that all dependencies are properly listed in package.json
+- Verify build command is set to `npm run build`
+- Confirm output directory is set to `dist`
+
+**Runtime Errors**
+- Check browser console for JavaScript errors
+- Ensure all assets are loading correctly (check Network tab)
+- Verify routing works with your hosting provider's SPA configuration
+
+## �🔮 What's Next
 
 This release represents Phase 1 of our roadmap. Upcoming features include:
 
